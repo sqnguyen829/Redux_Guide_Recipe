@@ -6,7 +6,7 @@ class RecipesController < ApplicationController
     def index 
         recipes = Recipe.all
         #render will return the object back in json format so that it can be used by the frontend
-        render json: recipes
+        render json: recipes, except: [:created_at, :updated_at]
     end
 
     #gets info on a specific recipe
